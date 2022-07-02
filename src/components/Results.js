@@ -15,6 +15,10 @@ const results = [
     {
         aqi: 17,
         category: "Low"
+    },
+    {
+        aqi: 17,
+        category: "Low"
     }
 ]
 
