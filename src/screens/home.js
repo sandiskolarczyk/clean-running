@@ -1,6 +1,20 @@
 import React from 'react';
-import { Box } from '@chakra-ui/react';
+import styled from 'styled-components';
+import { Results } from '../components/Results';
+
+const Container = styled.div`
+
+`
+
+const MapContainer = styled.div`
+
+`
 
 export const Home = () => {
-  return <Box minH="100vh"></Box>;
+  return (
+    <Container>
+      <MapContainer />
+      <Results />
+    </Container>
+  )
 };
