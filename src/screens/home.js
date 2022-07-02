@@ -1,6 +1,13 @@
 import React from 'react';
-import { Box } from '@chakra-ui/react';
+import MapDisplay from '../components/MapDisplay'
+import { Box } from '@chakra-ui/react'
+
 
 export const Home = () => {
-  return <Box minH="100vh"></Box>;
-};
+  // console.log("hello")
+  return (
+    <Box minH="100vh">
+      <MapDisplay />
+    </Box>
+  )
+}
