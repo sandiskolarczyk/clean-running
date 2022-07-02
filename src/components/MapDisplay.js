@@ -10,15 +10,17 @@ export default function MapDisplay() {
   // console.log('inside MapDisplay');
   const [zoom, setZoom] = useState(15);
   const [center, setCenter] = useState({ lat: 51.53042, lng: -0.07647 });
-  // const [position, setPosition] = useState({ lat: 51.53042, lng: -0.07647 });
+  const [position, setPosition] = useState({ lat: 51.53042, lng: -0.07647 });
   const [clicks, setClicks] = useState([]);
 
   const onClick = e => {
-    setClicks([e.latLng]);
+    // setClicks([e.latLng]);
     const lng = e.latLng.lng()
     const lat = e.latLng.lat()
     const coordinates = {lng: lng, lat: lat}
     console.log(coordinates)
+    setClicks([coordinates]);
+    console.log(clicks)
     // console.log("lng", lng)
     // console.log("lat", lat)
   };
@@ -33,9 +35,14 @@ export default function MapDisplay() {
       <GoogleMap
         center={center}
         zoom={zoom}
-        // position={position}
+        position={position}
         onClick={onClick}
       >
+
+      {/* {clicks.map((latLng, i) => (
+        <Marker key={i} position={latLng} />
+      ))} */}
+
         <AllMarkers clicks={clicks} />
       </GoogleMap>
     </Wrapper>
