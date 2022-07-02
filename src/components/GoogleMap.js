@@ -3,7 +3,7 @@ import { useRef, useState, useEffect } from 'react';
 export default function GoogleMap({ center, zoom, position, onClick }) {
   const ref = useRef(null);
   const [map, setMap] = useState();
-  console.log('mapp', map);
+  // console.log('map', map);
 
   useEffect(() => {
     if (map) {
@@ -22,10 +22,10 @@ export default function GoogleMap({ center, zoom, position, onClick }) {
     }
   }, [ref, map, center, zoom]);
 
-  const marker = new window.google.maps.Marker({
-    position: position,
-    map,
-  });
+  // const marker = new window.google.maps.Marker({
+  //   position: position,
+  //   map,
+  // });
 
-  return <div ref={ref} id="map" style={{ height: '50vh', width: '50vh' }} />;
+  return <div ref={ref} id="map" style={{ height: '60vh', width: '100%' }} />;
 }
