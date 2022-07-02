@@ -5,7 +5,12 @@ export default function Marker(options, { position }) {
 
   useEffect(() => {
     if (!marker) {
-      setMarker(new window.google.maps.Marker());
+      setMarker(
+        new window.google.maps.Marker({
+          position: position,
+          // map,
+        })
+      );
     }
 
     // remove marker from map on unmount
@@ -14,7 +19,7 @@ export default function Marker(options, { position }) {
         marker.setMap(null);
       }
     };
-  }, [marker]);
+  }, [marker, position]);
 
   useEffect(() => {
     if (marker) {

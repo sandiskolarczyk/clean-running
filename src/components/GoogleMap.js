@@ -1,9 +1,20 @@
 import { useRef, useState, useEffect } from 'react';
 
-export default function GoogleMap({ center, zoom, position }) {
+export default function GoogleMap({ center, zoom, position, onClick }) {
   const ref = useRef(null);
   const [map, setMap] = useState();
   console.log('mapp', map);
+
+  useEffect(() => {
+    if (map) {
+      ['click'].forEach(eventName =>
+        window.google.maps.event.clearListeners(map, eventName)
+      );
+      if (onClick) {
+        map.addListener('click', onClick);
+      }
+    }
+  }, [map, onClick]);
 
   useEffect(() => {
     if (ref.current && !map) {
@@ -11,7 +22,7 @@ export default function GoogleMap({ center, zoom, position }) {
     }
   }, [ref, map, center, zoom]);
 
-  new window.google.maps.Marker({
+  const marker = new window.google.maps.Marker({
     position: position,
     map,
   });
