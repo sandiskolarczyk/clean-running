@@ -22,6 +22,12 @@ export default function GoogleMap({ center, zoom, position, onClick }) {
     }
   }, [ref, map, center, zoom]);
 
+  // add marker to map on click
+  new window.google.maps.Marker({
+    position: position,
+    map,
+  });
+
   // const marker = new window.google.maps.Marker({
   //   position: position,
   //   map,
