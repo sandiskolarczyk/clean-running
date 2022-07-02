@@ -1,9 +1,9 @@
 import { useRef, useState, useEffect } from 'react';
 
-export default function GoogleMap({ center, zoom }) {
+export default function GoogleMap({ center, zoom, position }) {
   const ref = useRef(null);
   const [map, setMap] = useState();
-  console.log("mapp", map);
+  console.log('mapp', map);
 
   useEffect(() => {
     if (ref.current && !map) {
@@ -11,5 +11,10 @@ export default function GoogleMap({ center, zoom }) {
     }
   }, [ref, map, center, zoom]);
 
-  return <div ref={ref} id="map" style={{height: "50vh", width: "50vh"}}/>;
+  new window.google.maps.Marker({
+    position: position,
+    map,
+  });
+
+  return <div ref={ref} id="map" style={{ height: '50vh', width: '50vh' }} />;
 }
