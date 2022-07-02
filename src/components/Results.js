@@ -1,31 +1,44 @@
 import React from 'react'
 
+import styled from 'styled-components';
+
 import { Result } from './Result'
+import { Line } from './Line';
 
 // mock data for now
 const results = [
     {
         aqi: 50,
-        category: "Moderate"
+        category: "Sensitive"
     },
     {
         aqi: 87,
-        category: "High"
+        category: "Very Unhealthy"
     },
     {
         aqi: 17,
-        category: "Low"
+        category: "Good"
     },
     {
         aqi: 17,
-        category: "Low"
+        category: "Good"
     }
 ]
 
+const ResultsWrapper = styled.section`
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+`
+
 export const Results = () => {
   return (
-    <>
-    {results.map(item => <Result {...item}/>)}
-    </>
+    <ResultsWrapper>
+    {results.map((item, idx) => <Result key={idx} {...item}/>)}
+    <Line/>
+    </ResultsWrapper>
   )
 }
