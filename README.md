@@ -48,7 +48,10 @@ If no version number is returned, please install [npm](https://docs.npmjs.com/).
 
 #### Step 1. Clone this repository
 
+```
 git clone git@github.com:sandiskolarczyk/clean-running.git
+```
+
 Now, change directory to the project
 
 ```
