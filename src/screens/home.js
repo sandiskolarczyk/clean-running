@@ -39,7 +39,6 @@ export const Home = () => {
       </ResultsWrap> : 
       null
       }
-      {/* <Bottom id='Bottom' /> */}
     </Container>
   );
 };

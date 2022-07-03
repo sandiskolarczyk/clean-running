@@ -34,7 +34,6 @@ const ResultsWrapper = styled.section`
   flex-direction: column;
   gap: 40px;
   position: relative;
-  // height: 100vh;
   margin-bottom: 300px;
   width: 500px;
 `;

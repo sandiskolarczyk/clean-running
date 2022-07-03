@@ -37,5 +37,5 @@ export default function GoogleMap({
     window.alert(`Sorry, you can't add more than 5 markers!`);
   }
 
-  return <div ref={ref} id="map" style={{ height: '60vh', width: '100%' }} />;
+  return <div ref={ref} id="map" style={{ height: '60vh', width: '95%' }} />;
 }
