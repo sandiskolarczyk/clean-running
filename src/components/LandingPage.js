@@ -53,7 +53,7 @@ export const LandingPage = () => {
           }}
           src="https://embed.lottiefiles.com/animation/85330"
         ></iframe>
-        <Title>Clean Running</Title>
+        <Title>Clean Runnings</Title>
         <Icon>
           <a href="#Map">
             <BsChevronCompactDown style={{ height: '50px', width: '50px' }} />

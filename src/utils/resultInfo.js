@@ -6,4 +6,3 @@ export const resultInfo = {
     "very unhealthy": 'Health alert: The risk of health effects is increased for everyone.',
     hazardous: 'Health warning of emergency conditions: everyone is more likely to be affected.',
   };
-  

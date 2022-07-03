@@ -34,10 +34,6 @@ const ResultsWrapper = styled.section`
   flex-direction: column;
   gap: 40px;
   position: relative;
-  /* justify-content: center;
-  align-items: center; */
-  /* min-height: 100vh; */
-  // max-height: 100%;
   height: 100vh;
   width: 500px;
 `;
