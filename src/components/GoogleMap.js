@@ -29,13 +29,13 @@ export default function GoogleMap({
   }, [ref, map, center, zoom]);
 
   // add marker to map on click
-  if (allMarkers.length < 6) {
+  if (allMarkers.length <= 5) {
     new window.google.maps.Marker({
       position: position,
       map,
     });
   } else {
-    window.alert(`sorry, you can't add more than 6 markers!`)
+    window.alert(`sorry, you can't add more than 5 markers!`);
   }
 
   return <div ref={ref} id="map" style={{ height: '60vh', width: '100%' }} />;
