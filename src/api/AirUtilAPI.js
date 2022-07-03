@@ -15,7 +15,7 @@ export const AirUtilAPI = async (lat, lng) => {
     //setAirQualityData(data.stations);
     return [
       {
-        aqi: data.stations[0].AQI,
+        aqi: data.stations[0].AQI || 0,
         category: data.stations[0].aqiInfo.category,
       },
     ];

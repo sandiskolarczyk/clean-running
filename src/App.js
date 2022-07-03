@@ -1,5 +1,5 @@
 import { ChakraProvider, theme } from '@chakra-ui/react';
-import { Home } from './screen/home';
+import { Home } from './screens/home';
 
 function App() {
   return (
