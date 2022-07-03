@@ -5,7 +5,7 @@ export const AirUtilAPI = async (lat, lng) => {
       method: 'GET',
       headers: {
         'x-api-key':
-          '8ffe7cc25d0cb2714b3096bf32bfc693c73be6c0132d2823f7497dea9db6a23e',
+          '00760fe27662c395d6a61f45c0b54bbba02ae8262f7637b3d65f6f7d29fdb4fe',
         'Content-type': 'application/json',
       },
     }

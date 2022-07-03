@@ -5,7 +5,7 @@ import { MEDIA } from '../styles/media';
 
 import { Result } from './Result';
 
-// mock data for now
+// mock data 
 const results = [
   {
     aqi: 50,
@@ -34,7 +34,8 @@ const ResultsWrapper = styled.section`
   flex-direction: column;
   gap: 40px;
   position: relative;
-  height: 100vh;
+  // height: 100vh;
+  margin-bottom: 300px;
   width: 500px;
 `;
 
@@ -79,13 +80,14 @@ const ResultAnimation = styled.div`
   animation-duration: 3s;
 `;
 
-export const Results = () => {
+export const Results = ({aqiData}) => {
+  
   return (
     <ResultsWrapper>
       <Animation />
-      {results.map((item, idx) => (
+      {aqiData.map((item, idx) => (
         <ResultAnimation>
-          <Result key={idx} {...item} />
+          <Result key={idx} {...item[0]} />
         </ResultAnimation>
       ))}
     </ResultsWrapper>
