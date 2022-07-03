@@ -1,4 +1,5 @@
 import { React, useState, useEffect } from 'react';
+import styled from 'styled-components';
 import { Wrapper, Status } from '@googlemaps/react-wrapper';
 import { AirUtilAPI } from '../api/AirUtilAPI';
 import GoogleMap from './GoogleMap';
@@ -6,61 +7,65 @@ import GoogleMap from './GoogleMap';
 const API_KEY = 'AIzaSyDgz-Iu4suXDMHGDFYxN1OBFYhtDWxEUPQ';
 let markersArray = [];
 
-export default function MapDisplay() {
-  // console.log('inside MapDisplay');
+const SubmitButton = styled.button`
+  width: 100px;
+  height: 50px;
+  background-color: #937dc2;
+  border: 1px solid black;
+  border-radius: 5px;
+  box-shadow: 3px 3px 2px 1px rgba(50, 10, 205, 0.2);
+  font-family: 'Inconsolata';
+  font-size: 18px;
+`;
+
+const ResultsButton = styled(SubmitButton)`
+  width: 200px;
+`
+
+export default function MapDisplay({ aqiData, setAqiData }) {
   const [zoom, setZoom] = useState(15);
   const [center, setCenter] = useState({ lat: 51.53042, lng: -0.07647 });
-  const [clicks, setClicks] = useState({ lat: 51.53042, lng: -0.07647 });
+  const [clicks, setClicks] = useState();
   const [allMarkers, setAllMarkers] = useState([]);
   const [coordinates, setCoordinates] = useState([]);
-  const [aqiData, setAqiData] = useState([]);
 
   const onClick = e => {
     if (allMarkers.length <= 5) {
-      // setClicks([e.latLng]);
       const lng = e.latLng.lng();
       const lat = e.latLng.lat();
       const coordinates = { lng: lng, lat: lat };
-      // console.log(coordinates);
       setClicks(coordinates);
       markersArray.push(coordinates);
       setAllMarkers(markersArray);
-      // console.log(allMarkers);
     }
   };
 
   const render = status => {
-    // console.log('status', status);
-    if (status === Status.FAILURE) console.log('failure');
+    if (status === Status.FAILURE) console.log('Failed response');
   };
+
 
   useEffect(() => {
     const getData = async () => {
       setAqiData([]);
       for (let i = 0; i < coordinates.length; i++) {
-        // console.log(coordinate[i].lat, coordinate[i].lng);
         if (Object.keys(coordinates[i]).length !== 0) {
-          // const data = await AirUtilAPI(coordinates[i].lat, coordinates[i].lng);
-          // setAqiData(aqiData => [...aqiData, data]);
-          // console.log(coordinates[i]);
-          // setAqiData(coordinate);
+          const data = await AirUtilAPI(coordinates[i].lat, coordinates[i].lng);
+          setAqiData(aqiData => [...aqiData, data]);
         }
       }
     };
+
     getData();
   }, [coordinates]);
 
-  const handleSubmit = e => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     if (allMarkers.length === 5) {
       allMarkers.pop();
-      // console.log(allMarkers);
-      // console.log(coordinates);
+      setCoordinates([...allMarkers]);
     }
-
-    setCoordinates([{ lng: -0.07647, lat: 51.53042 }, ...allMarkers]);
-    // console.log(allMarkers);
-    // console.log(coordinates);
+    setCoordinates([...allMarkers]);
   };
 
   return (
@@ -71,19 +76,22 @@ export default function MapDisplay() {
         position={clicks}
         onClick={onClick}
         allMarkers={allMarkers}
-      ></GoogleMap>
-      <button type="submit" onClick={handleSubmit}>
-        Submit
-      </button>
-      <h2>Response: </h2>
-      {aqiData.map(data => {
-        return (
-          <div>
-            <h3>Aqi: {data[0].aqi}</h3>
-            <h3>Category: {data[0].category}</h3>
-          </div>
-        );
-      })}
+      />
+            <SubmitButton 
+            onClick={handleSubmit}
+            >
+            Submit
+            </SubmitButton>
+
+            { aqiData.length > 0 ? 
+                    <a href="#Results">
+                      <ResultsButton>
+                      See Results
+                      </ResultsButton>
+                    </a>
+                    : 
+            <iframe title='flying paper plane' src="https://embed.lottiefiles.com/animation/77737"></iframe>
+          }
     </Wrapper>
   );
 }

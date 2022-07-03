@@ -1,6 +1,5 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
-// import RunningPerson from '../../public/assets/';
 import { BsChevronCompactDown } from 'react-icons/bs';
 
 const LandingContainer = styled.div`
@@ -55,7 +54,7 @@ export const LandingPage = () => {
         ></iframe>
         <Title>Clean Runnings</Title>
         <Icon>
-          <a href="#Map">
+          <a href="#Route">
             <BsChevronCompactDown style={{ height: '50px', width: '50px' }} />
           </a>
         </Icon>

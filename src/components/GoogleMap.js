@@ -9,7 +9,6 @@ export default function GoogleMap({
 }) {
   const ref = useRef(null);
   const [map, setMap] = useState();
-  // console.log('map', map);
 
   useEffect(() => {
     if (map) {
@@ -35,7 +34,7 @@ export default function GoogleMap({
       map,
     });
   } else {
-    window.alert(`sorry, you can't add more than 5 markers!`);
+    window.alert(`Sorry, you can't add more than 5 markers!`);
   }
 
   return <div ref={ref} id="map" style={{ height: '60vh', width: '100%' }} />;

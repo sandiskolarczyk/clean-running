@@ -6,7 +6,7 @@ import { COLORS } from '../styles/colors';
 const LEVELS = {
   good: COLORS.good,
   moderate: COLORS.moderate,
-  sensitive: COLORS.sensitive,
+  'unhealthy for sensitive groups': COLORS.sensitive,
   unhealthy: COLORS.unhealthy,
   'very unhealthy': COLORS.veryUnhealthy,
   hazardous: COLORS.hazardous,
@@ -51,6 +51,7 @@ const Level = styled.p`
   margin-right: 20px;
   font-family: 'Nunito', Sans-serif;
   font-size: 15px;
+  max-width: 100px;
 `;
 
 const Detail = styled.p`
@@ -59,7 +60,7 @@ const Detail = styled.p`
   font-size: 15px;
 `;
 
-export const Result = ({ aqi, category }) => {
+export const Result = ({ aqi, category}) => {
   return (
     <ResultWrapper>
       <CircleOut>
@@ -67,7 +68,6 @@ export const Result = ({ aqi, category }) => {
           <p>{aqi}</p>
         </Circle>
       </CircleOut>
-
       <Level>{category.toUpperCase()}</Level>
       <Detail>{resultInfo[category.toLowerCase()]}</Detail>
     </ResultWrapper>
