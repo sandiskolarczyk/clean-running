@@ -18,7 +18,7 @@ const ResultWrapper = styled.div`
   height: 100px;
   justify-content: space-between;
   align-items: center;
-  padding: 5px 0;
+  padding: 5px;
   border: 1px solid black;
   border-radius: 10px;
   background-color: white;
@@ -45,15 +45,18 @@ const Circle = styled.div`
   margin-right: 10px;
 `;
 
-const Level = styled.div`
+const Level = styled.p`
   text-align: center;
   font-weight: 900;
   margin-right: 20px;
+  font-family: 'Nunito', Sans-serif;
+  font-size: 15px;
 `;
 
-const Detail = styled.div`
+const Detail = styled.p`
   width: 300px;
-  font-family: Sans-serif;
+  font-family: 'Inconsolata', Sans-serif;
+  font-size: 15px;
 `;
 
 export const Result = ({ aqi, category }) => {
@@ -65,12 +68,8 @@ export const Result = ({ aqi, category }) => {
         </Circle>
       </CircleOut>
 
-      <Level>
-        <p>{category.toUpperCase()}</p>
-      </Level>
-      <Detail>
-        <p>{resultInfo[category.toLowerCase()]}</p>
-      </Detail>
+      <Level>{category.toUpperCase()}</Level>
+      <Detail>{resultInfo[category.toLowerCase()]}</Detail>
     </ResultWrapper>
   );
 };
