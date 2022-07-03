@@ -85,3 +85,7 @@ Made by:
 * [Sandra Skolarczyk](https://github.com/sandiskolarczyk)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
+
+<p align="center">
+  <img src="https://visitor-badge.laobi.icu/badge?page_id=sandiskolarczyk/clean-running" id="counter">
+</p>
