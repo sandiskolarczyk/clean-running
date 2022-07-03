@@ -25,7 +25,7 @@ const ResultsButton = styled(SubmitButton)`
 export default function MapDisplay({ aqiData, setAqiData }) {
   const [zoom, setZoom] = useState(15);
   const [center, setCenter] = useState({ lat: 51.53042, lng: -0.07647 });
-  const [clicks, setClicks] = useState({ lat: 51.53042, lng: -0.07647 });
+  const [clicks, setClicks] = useState();
   const [allMarkers, setAllMarkers] = useState([]);
   const [coordinates, setCoordinates] = useState([]);
 
@@ -63,9 +63,9 @@ export default function MapDisplay({ aqiData, setAqiData }) {
     e.preventDefault();
     if (allMarkers.length === 5) {
       allMarkers.pop();
-      setCoordinates([{ lng: -0.07647, lat: 51.53042 }, ...allMarkers]);
+      setCoordinates([...allMarkers]);
     }
-    setCoordinates([{ lng: -0.07647, lat: 51.53042 }, ...allMarkers]);
+    setCoordinates([...allMarkers]);
   };
 
   return (
