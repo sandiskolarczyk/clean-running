@@ -26,16 +26,12 @@ const results = [
     aqi: 300,
     category: 'Hazardous',
   },
-  {
-    aqi: 60,
-    category: 'Unhealthy',
-  },
 ];
 
 const ResultsWrapper = styled.section`
   display: flex;
   flex-direction: column;
-  gap: 50px;
+  gap: 40px;
   position: relative;
   /* justify-content: center;
   align-items: center; */
@@ -50,30 +46,29 @@ const lineAnimation = keyframes`
 `;
 
 const Animation = styled.div`
-  & {
-    background-color: #e0e0e0;
-    position: absolute;
-    top: 10%;
-    left: 5%;
-    transform: translateX(-50%);
-    height: 85%;
-    width: 4px;
-    z-index: -1;
-    transition: 0.4s ease;
-    animation-name: ${lineAnimation};
-    animation-duration: 5s;
-  }
+  background-color: #e0e0e0;
+  position: absolute;
+  top: 10%;
+  left: 5%;
+  transform: translateX(-50%);
+  height: 85%;
+  width: 4px;
+  z-index: -1;
+  transition: 0.4s ease;
+  animation-name: ${lineAnimation};
+  animation-duration: 5s;
+`;
 
-  /* &::before {
-    content: '';
-    background-color: #e0e0e0;
-    position: absolute;
-    top: 0%;
-    left: 5%;
-    height: 200%;
-    width: 4px;
-    z-index: -2;
-  } */
+const itemAnimation = keyframes`
+0% {margin-bottom: -20px;}
+40% {margin-bottom: 20px;}
+100% {margin-bottom: 0px;}
+`;
+
+const ResultAnimation = styled.div`
+  transition: 0.4s ease;
+  animation-name: ${itemAnimation};
+  animation-duration: 3s;
 `;
 
 export const Results = () => {
@@ -81,7 +76,9 @@ export const Results = () => {
     <ResultsWrapper>
       <Animation />
       {results.map((item, idx) => (
-        <Result key={idx} {...item} />
+        <ResultAnimation>
+          <Result key={idx} {...item} />
+        </ResultAnimation>
       ))}
     </ResultsWrapper>
   );

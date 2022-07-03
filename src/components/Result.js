@@ -15,7 +15,7 @@ const LEVELS = {
 const ResultWrapper = styled.div`
   display: flex;
   width: 500px;
-  /* height: 100px; */
+  height: 100px;
   justify-content: space-between;
   align-items: center;
   padding: 5px 0;
