@@ -34,6 +34,8 @@ export default function GoogleMap({
       position: position,
       map,
     });
+  } else {
+    window.alert(`sorry, you can't add more than 6 markers!`)
   }
 
   return <div ref={ref} id="map" style={{ height: '60vh', width: '100%' }} />;

@@ -13,15 +13,17 @@ export default function MapDisplay() {
   const [allMarkers, setAllMarkers] = useState([]);
 
   const onClick = e => {
-    // setClicks([e.latLng]);
-    const lng = e.latLng.lng();
-    const lat = e.latLng.lat();
-    const coordinates = { lng: lng, lat: lat };
-    // console.log(coordinates);
-    setClicks(coordinates);
-    markersArray.push(coordinates);
-    setAllMarkers(markersArray);
-    console.log(allMarkers);
+    if (allMarkers.length < 6) {
+      // setClicks([e.latLng]);
+      const lng = e.latLng.lng();
+      const lat = e.latLng.lat();
+      const coordinates = { lng: lng, lat: lat };
+      // console.log(coordinates);
+      setClicks(coordinates);
+      markersArray.push(coordinates);
+      setAllMarkers(markersArray);
+      console.log(allMarkers);
+    }
   };
 
   const render = status => {
