@@ -1,6 +1,6 @@
 <div hidden id="top"></div>
 
- <h1 align="center">Cleaning Running 🏃‍♀️</h1>
+ <h1 align="center">Cleaning Runnings 🏃‍♀️</h1>
 
 Table of Contents:
 <ol>
@@ -17,11 +17,11 @@ The project brief, alongside API documentation can be found on Notion, [click he
 
 ## Our Idea
 
-Clean Running helps runners minimise their exposure to air pollution by showing them the Air Quality Index ([AQI](https://en.wikipedia.org/wiki/Air_quality_index)) along their custom running route. Check it out here!
+Clean Runnings helps runners minimise their exposure to air pollution by showing them the Air Quality Index ([AQI](https://en.wikipedia.org/wiki/Air_quality_index)) along their custom running route. Check it out here!
 
 ## Tech stack
 
-Cleaning Running is optimised for both mobile and desktop.
+Cleaning Runnings is optimised for both mobile and desktop.
 
 Frameworks & libraries used:
 > [Chakra UI](https://chakra-ui.com/) <br>
