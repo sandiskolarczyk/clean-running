@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { LandingPage } from '../components/LandingPage';
 import { Map } from '../components/Map';
 import { Results } from '../components/Results';
+import MapDisplay from '../components/MapDisplay';
 
 const Container = styled.div`
   display: flex;
@@ -26,6 +27,7 @@ export const Home = () => {
     <Container>
       <LandingPage />
       <Map />
+      <MapDisplay />
       <ResultsWrap>
         <ResultsHeader id="Results">Let's see your results</ResultsHeader>
         <Results />
