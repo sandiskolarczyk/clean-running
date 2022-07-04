@@ -3,8 +3,8 @@ import styled from 'styled-components';
 import { Wrapper, Status } from '@googlemaps/react-wrapper';
 import { AirUtilAPI } from '../api/AirUtilAPI';
 import GoogleMap from './GoogleMap';
+import { MAP_API } from '../apiKeys/apiKeys';
 
-const API_KEY = 'AIzaSyDgz-Iu4suXDMHGDFYxN1OBFYhtDWxEUPQ';
 let markersArray = [];
 
 const SubmitButton = styled.button`
@@ -20,7 +20,7 @@ const SubmitButton = styled.button`
 
 const ResultsButton = styled(SubmitButton)`
   width: 200px;
-`
+`;
 
 export default function MapDisplay({ aqiData, setAqiData }) {
   const [zoom, setZoom] = useState(15);
@@ -44,7 +44,6 @@ export default function MapDisplay({ aqiData, setAqiData }) {
     if (status === Status.FAILURE) console.log('Failed response');
   };
 
-
   useEffect(() => {
     const getData = async () => {
       setAqiData([]);
@@ -59,7 +58,7 @@ export default function MapDisplay({ aqiData, setAqiData }) {
     getData();
   }, [coordinates]);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = e => {
     e.preventDefault();
     if (allMarkers.length === 5) {
       allMarkers.pop();
@@ -69,7 +68,7 @@ export default function MapDisplay({ aqiData, setAqiData }) {
   };
 
   return (
-    <Wrapper apiKey={API_KEY} render={render}>
+    <Wrapper apiKey={MAP_API} render={render}>
       <GoogleMap
         center={center}
         zoom={zoom}
@@ -77,21 +76,18 @@ export default function MapDisplay({ aqiData, setAqiData }) {
         onClick={onClick}
         allMarkers={allMarkers}
       />
-            <SubmitButton 
-            onClick={handleSubmit}
-            >
-            Submit
-            </SubmitButton>
+      <SubmitButton onClick={handleSubmit}>Submit</SubmitButton>
 
-            { aqiData.length > 0 ? 
-                    <a href="#Results">
-                      <ResultsButton>
-                      See Results
-                      </ResultsButton>
-                    </a>
-                    : 
-            <iframe title='flying paper plane' src="https://embed.lottiefiles.com/animation/77737"></iframe>
-          }
+      {aqiData.length > 0 ? (
+        <a href="#Results">
+          <ResultsButton>See Results</ResultsButton>
+        </a>
+      ) : (
+        <iframe
+          title="flying paper plane"
+          src="https://embed.lottiefiles.com/animation/77737"
+        ></iframe>
+      )}
     </Wrapper>
   );
 }
