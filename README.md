@@ -35,11 +35,11 @@ Clean Runnings is optimised for both mobile and desktop.
 
 Frameworks & libraries used:
 
-> [React](https://reactjs.org/) <br> > [styled-components](https://styled-components.com/docs)
+> [React](https://reactjs.org/) <br> [styled-components](https://styled-components.com/docs)
 
 APIs:
 
-> [Google JavaScript API](https://developers.google.com/maps/documentation/javascript/react-map) <br> > [ambee](https://www.getambee.com/)
+> [Google JavaScript API](https://developers.google.com/maps/documentation/javascript/react-map) <br> [ambee](https://www.getambee.com/)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -73,13 +73,26 @@ cd clean-running
 npm install
 ```
 
-#### Step 3. Run the project locally 🚀
+#### Step 3. Create your API keys
+
+Go to [Google JavaScript API](https://developers.google.com/maps/documentation/javascript/react-map) and [ambee](https://www.getambee.com/) to get your API keys for free.
+
+Once you have those, in the src folder, create another folder called apiKeys, and inside, a file called apiKeys.js
+
+```
+const AMBEE_API = {your API key here};
+const MAP_API = {your API key here};
+
+export { AMBEE_API, MAP_API };
+```
+
+#### Step 4. Run the project locally 🚀
 
 ```
 npm run start
 ```
 
-and visit [localhost:3000](http://localhost:3000/)
+Visit [localhost:3000](http://localhost:3000/) and have a play around!
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
