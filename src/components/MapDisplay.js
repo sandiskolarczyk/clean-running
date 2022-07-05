@@ -56,7 +56,7 @@ export default function MapDisplay({ aqiData, setAqiData }) {
     };
 
     getData();
-  }, [coordinates]);
+  }, [coordinates, setAqiData]);
 
   const handleSubmit = e => {
     e.preventDefault();

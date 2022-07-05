@@ -1,4 +1,4 @@
-import { AMBEE_API } from '../apiKeys/apiKeys';
+import { AMBEE_API } from '../apiKeys/apiKeys.js';
 
 export const AirUtilAPI = async (lat, lng) => {
   const res = await fetch(
@@ -13,6 +13,7 @@ export const AirUtilAPI = async (lat, lng) => {
   );
   if (res.ok === true) {
     const data = await res.json();
+    // console.log(data);
     return [
       {
         aqi: data.stations[0].AQI || 0,
