@@ -3,9 +3,11 @@
  <h1 align="center">Clean Runnings 🏃‍♀️</h1>
 
 Table of Contents:
+
 <ol>
   <li><a href="#the-brief">The Brief ✈️ </a></li>
   <li><a href="#our-idea">Our Idea 🏃  </a></li>
+  <li><a href="#demo">Demo </a></li>
   <li><a href="#tech-stack">Tech Stack</a></li>
   <li><a href="#installation">Installation</a></li>
   <li><a href="#acknowledgments-and-contact">Acknowledgments and Contact</a></li>
@@ -17,20 +19,27 @@ The project brief, alongside API documentation can be found on Notion, [click he
 
 ## Our Idea
 
-Clean Runnings helps runners minimise their exposure to air pollution by showing them the Air Quality Index ([AQI](https://en.wikipedia.org/wiki/Air_quality_index)) along their custom running route. Check it out here!
+Clean Runnings helps runners minimise their exposure to air pollution by showing them the Air Quality Index ([AQI](https://en.wikipedia.org/wiki/Air_quality_index)) along their custom running route.
 
-## Tech stack
+Check out our published version [here](https://sandiskolarczyk.github.io/clean-runnings/) 💻 ✨
 
-Cleaning Runnings is optimised for both mobile and desktop.
+## Demo
+
+<div align="center">
+<img src="https://pitch-assets-ccb95893-de3f-4266-973c-20049231b248.s3.eu-west-1.amazonaws.com/3a84d344-8f22-4475-819c-4695499bbce2?pitch-bytes=3570891&pitch-content-type=image%2Fgif&pitch-gifm=true" alt="App demo GIF"/>
+</div>
+
+## Tech Stack
+
+Clean Runnings is optimised for both mobile and desktop.
 
 Frameworks & libraries used:
-> [Chakra UI](https://chakra-ui.com/) <br>
-> [React](https://reactjs.org/) <br>
-> [styled-components](https://styled-components.com/docs)
+
+> [React](https://reactjs.org/) <br> > [styled-components](https://styled-components.com/docs)
 
 APIs:
-> [Google JavaScript API](https://developers.google.com/maps/documentation/javascript/react-map) <br>
-> [ambee](https://www.getambee.com/)
+
+> [Google JavaScript API](https://developers.google.com/maps/documentation/javascript/react-map) <br> > [ambee](https://www.getambee.com/)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -49,7 +58,7 @@ If no version number is returned, please install [npm](https://docs.npmjs.com/).
 #### Step 1. Clone this repository
 
 ```
-git clone git@github.com:sandiskolarczyk/clean-running.git
+git clone git@github.com:sandiskolarczyk/clean-runnings.git
 ```
 
 Now, change directory to the project
@@ -78,11 +87,11 @@ and visit [localhost:3000](http://localhost:3000/)
 
 Made by:
 
-* [Adrian Hards](https://github.com/adrianHards)
-* [Antony Long](https://github.com/antonylong)
-* [Elena Marinaki](https://github.com/elenamarinaki)
-* [Michael Adeleke](https://github.com/11ma)
-* [Sandra Skolarczyk](https://github.com/sandiskolarczyk)
+- [Adrian Hards](https://github.com/adrianHards)
+- [Antony Long](https://github.com/antonylong)
+- [Elena Marinaki](https://github.com/elenamarinaki)
+- [Michael Adeleke](https://github.com/11ma)
+- [Sandra Skolarczyk](https://github.com/sandiskolarczyk)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
